@@ -69,3 +69,36 @@ changelog:
 release:
   draft: false
   prerelease: auto
+
+# Homebrew formula published to a personal tap. Users will install via:
+#     brew install Otrivin/tap/pomodoro-tui
+brews:
+  - name: pomodoro-tui
+    repository:
+      owner: Otrivin
+      name: homebrew-tap
+      token: '{{ .Env.TAP_GITHUB_TOKEN }}'
+    commit_author:
+      name: goreleaserbot
+      email: bot@goreleaser.com
+    homepage: https://github.com/Otrivin/pomodoro-tui
+    description: Terminal Pomodoro timer with Warhol-style UI and sonar ping
+    license: MIT
+    test: |
+      system "#{bin}/pomodoro", "-snapshot", "-width", "80", "-height", "20"
+
+# Scoop manifest published to a personal bucket. Users will install via:
+#     scoop bucket add otrivin https://github.com/Otrivin/scoop-bucket
+#     scoop install otrivin/pomodoro-tui
+scoops:
+  - name: pomodoro-tui
+    repository:
+      owner: Otrivin
+      name: scoop-bucket
+      token: '{{ .Env.TAP_GITHUB_TOKEN }}'
+    commit_author:
+      name: goreleaserbot
+      email: bot@goreleaser.com
+    homepage: https://github.com/Otrivin/pomodoro-tui
+    description: Terminal Pomodoro timer with Warhol-style UI and sonar ping
+    license: MIT

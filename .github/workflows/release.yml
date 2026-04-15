@@ -35,3 +35,7 @@ jobs:
           args: release --clean
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # PAT with `repo` scope on the homebrew-tap and scoop-bucket repos.
+          # Falls back to GITHUB_TOKEN for snapshot/testing where cross-repo
+          # publishing isn't needed.
+          TAP_GITHUB_TOKEN: ${{ secrets.TAP_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}

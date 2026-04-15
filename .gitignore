@@ -12,3 +12,6 @@ coverage.txt
 .idea/
 .vscode/
 .DS_Store
+
+# vhs demo tape
+*.tape

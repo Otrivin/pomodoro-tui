@@ -1,0 +1,71 @@
+version: 2
+
+project_name: pomodoro-tui
+
+before:
+  hooks:
+    - go mod tidy
+
+builds:
+  # Linux amd64 — native build on the ubuntu runner. CGO is required here
+  # because oto links against ALSA on Linux.
+  - id: linux-amd64
+    main: .
+    binary: pomodoro
+    env:
+      - CGO_ENABLED=1
+    goos: [linux]
+    goarch: [amd64]
+    ldflags: ['-s -w']
+    flags: ['-trimpath']
+
+  # macOS — oto uses purego (CoreAudio via dlopen), no CGO needed.
+  - id: darwin
+    main: .
+    binary: pomodoro
+    env:
+      - CGO_ENABLED=0
+    goos: [darwin]
+    goarch: [amd64, arm64]
+    ldflags: ['-s -w']
+    flags: ['-trimpath']
+
+  # Windows — oto uses purego (WASAPI), no CGO needed.
+  - id: windows
+    main: .
+    binary: pomodoro
+    env:
+      - CGO_ENABLED=0
+    goos: [windows]
+    goarch: [amd64]
+    ldflags: ['-s -w']
+    flags: ['-trimpath']
+
+archives:
+  - name_template: '{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}'
+    formats: ['tar.gz']
+    format_overrides:
+      - goos: windows
+        formats: ['zip']
+    files:
+      - README.md
+      - LICENSE
+
+checksum:
+  name_template: 'checksums.txt'
+
+snapshot:
+  version_template: '{{ incpatch .Version }}-next'
+
+changelog:
+  use: github
+  sort: asc
+  filters:
+    exclude:
+      - '^docs:'
+      - '^chore:'
+      - '^test:'
+
+release:
+  draft: false
+  prerelease: auto

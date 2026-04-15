@@ -1,0 +1,14 @@
+# Compiled binary
+/pomodoro
+/pomodoro.exe
+/dist/
+
+# Go build / test artifacts
+*.test
+*.out
+coverage.txt
+
+# Editor / OS
+.idea/
+.vscode/
+.DS_Store

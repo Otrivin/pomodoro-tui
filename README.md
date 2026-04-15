@@ -3,7 +3,7 @@
 Super simple terminal based Pomodoro timer built with built with
 [Bubble Tea][bubbletea] and [Lipgloss][lipgloss].
 
-![Pomodoro](assets/pomodoro_gui.png)
+![Pomodoro](assets/demo.gif)
 
 ## What is it?
 

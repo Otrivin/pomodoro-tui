@@ -3,13 +3,14 @@
 Super simple terminal based Pomodoro timer built with built with
 [Bubble Tea][bubbletea] and [Lipgloss][lipgloss].
 
-[!Pomodoro](assets/pomodoro_gui.png)
+![Pomodoro](assets/pomodoro_gui.png)
 
 ## What is it?
 
 It's trying to mimic the pomodoro technique, as listed on Wikipedia
 
-*The original technique has six steps:
+*
+The original technique has six steps:
 
     Decide on the task to be done.
     Set the Pomodoro timer (typically for 25 minutes).[1]
@@ -18,7 +19,8 @@ It's trying to mimic the pomodoro technique, as listed on Wikipedia
     Go back to Step 2 and repeat until you complete four pomodori.
     After four pomodori are done, take a long break (typically 20 to 30 minutes) instead of a short break. Once the long break is finished, return to step 2.
 
-For the purposes of the technique, a pomodoro is an interval of work time (and pomodori is the plural form).*
+For the purposes of the technique, a pomodoro is an interval of work time (and pomodori is the plural form).
+*
 
 ## Ok, I wanna install it. Pretty please?
 

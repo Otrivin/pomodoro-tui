@@ -9,7 +9,7 @@ Super simple terminal based Pomodoro timer built with built with
 
 It's trying to mimic the pomodoro technique, as listed on Wikipedia
 
-*
+<em>
 The original technique has six steps:
 
     Decide on the task to be done.
@@ -20,9 +20,22 @@ The original technique has six steps:
     After four pomodori are done, take a long break (typically 20 to 30 minutes) instead of a short break. Once the long break is finished, return to step 2.
 
 For the purposes of the technique, a pomodoro is an interval of work time (and pomodori is the plural form).
-*
+</em>
 
 ## Ok, I wanna install it. Pretty please?
+
+### One-liner (macOS / Linux via Homebrew)
+
+```bash
+brew install Otrivin/tap/pomodoro-tui
+```
+
+### One-liner (Windows via Scoop)
+
+```powershell
+scoop bucket add otrivin https://github.com/Otrivin/scoop-bucket
+scoop install otrivin/pomodoro-tui
+```
 
 ### Download the binary
 
